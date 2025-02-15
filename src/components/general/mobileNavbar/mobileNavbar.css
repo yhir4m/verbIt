@@ -5,22 +5,22 @@
     align-items: center;
     padding: 2% 5%;
 
-    .mobile-navbar__rigth{
 
-        display: flex;
-        gap: 1rem;
+}
 
-        .mobile-navbar__rigth--flags{
-            display: flex;
-            gap: 5%;
-        }
-        .mobile-navbar__rigth--profile{
-            display: flex;
-            align-items: center;
-        }
+.mobile-navbar__rigth{
+    display: flex;
+    gap: 1rem;
+}
 
-        img{
-            height: 100%;
-        }
-    }
+
+.mobile-navbar__rigth-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-navbar__rigth-modal{
+    position: relative;
+    width: 100%;
 }

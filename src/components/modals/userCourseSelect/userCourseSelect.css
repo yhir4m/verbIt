@@ -1,0 +1,7 @@
+.course--select--container{
+    position: absolute;
+}
+
+.course--select--courses{
+    display: flex;
+}

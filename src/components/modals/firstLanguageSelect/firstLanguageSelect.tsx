@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import "./firasLanguageSelect.css";
+import "./firstLanguageSelect.css";
 
 function FirsLanguageSelect() {
   const { t, i18n } = useTranslation();
