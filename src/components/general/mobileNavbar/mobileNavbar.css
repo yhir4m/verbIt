@@ -1,26 +1,47 @@
-
-.mobile-navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2% 5%;
-
-
-}
-
-.mobile-navbar__rigth{
-    display: flex;
-    gap: 1rem;
-}
-
-
-.mobile-navbar__rigth-options{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.mobile-navbar__rigth-modal{
+.mobile-navbar {
     position: relative;
     width: 100%;
-}
+    height: 10vh; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .mobile-navbar__rigth{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+  .mobile-navbar__user{
+    display: flex;
+    width: 50%;
+    gap: 10%;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .mobile-navbar__rigth-modal {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #ddd;
+    z-index: 9; 
+    display: none; 
+  }
+  .userCourseSelectModal-active{
+    display: flex !important;
+
+  }
+  
+  /* Muestra el modal cuando sea necesario */
+  .mobile-navbar__rigth-modal.active {
+    display: block;
+  }
+  

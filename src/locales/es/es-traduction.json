@@ -1,3 +1,8 @@
 {
-    "welcome":"bienvenido"
+    "welcome":"bienvenido",
+    "traduction-improve-your-language": "Mejora tu ",
+    "traduction-general-words": "Vocabulario general",
+    "traduction-words_a1": "Vocabulario A1",
+    "traduction-words_a1-description": "100 pabras de vocabulario basico",
+    "traduction-words-button":"Tomar test"
 }

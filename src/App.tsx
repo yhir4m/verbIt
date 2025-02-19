@@ -8,7 +8,7 @@ import en from "./locales/en/index";
 import es from "./locales/es/index";
 
 i18next.init({
-  fallbackLng: 'en',
+  fallbackLng: 'es',
   debug: true,
   interpolation: {
     escapeValue: false,

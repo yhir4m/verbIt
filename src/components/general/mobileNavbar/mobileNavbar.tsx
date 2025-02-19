@@ -1,35 +1,48 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useUserContext } from "../../../contexts/userContext";
 import UserCourseSelect from "../../modals/userCourseSelect/userCourseSelect";
 import "./mobileNavbar.css";
+
+import generalUtils from "../../../utils/generalUtils";
+
+import { useTranslation } from 'react-i18next';
 
 function MobileNavbar() {
   const [userLanguage, setUserLanguage] = useState("zh");
   const {userCourse} = useUserContext();
 
+  const { t, i18n } = useTranslation();
+
+  useEffect(()=>{
+    const handleLanguageChange = (lang: string) => {
+      i18n.changeLanguage(lang);
+    };
+    handleLanguageChange(userLanguage)
+  },[userCourse])
   return (
     <nav className="mobile-navbar">
-      <section className="mobile-navbar__logo">
-        <span>VerbIt</span>
-      </section>
+
       <section className="mobile-navbar__rigth">
-        <div className="mobile-navbar__rigth">
-            <div className="mobile-navbar__rigth-options">
+        <section className="mobile-navbar__logo">
+          <span>VerbIt</span>
+        </section>
+        <div className="mobile-navbar__user">
               <img
               className="mobile-navbar__language-flag mobile-navbar__course-flag"
               src={`../../../../public/languagesAssets/${userCourse}/${userCourse}-flag.webp`}
               alt="Course flag"
-              width={40}
-              height={40}
+              onClick={()=>generalUtils.launchModal("userCourseSelectModal","userCourseSelectModal-active")}
               />
               <span>User</span>
-            </div>
         </div>
       </section>
-      <div className="mobile-navbar__rigth-modal">
-          <UserCourseSelect></UserCourseSelect>
+
+      <div id="userCourseSelectModal" className="mobile-navbar__rigth-modal">
+          <UserCourseSelect modalId={'userCourseSelectModal'} modalActiveClass={'userCourseSelectModal-active'}></UserCourseSelect>
       </div>
+      </nav>
+  );
+}
 
 
  

@@ -1,56 +1,43 @@
-import React, { createContext, useState, useContext, ReactNode} from 'react';
+import React, { createContext, useState, useContext, ReactNode, useMemo } from "react";
 
+// Definir la estructura del contexto
 interface UserContextType {
-    userCourse: String;
-    setUserCourse: React.Dispatch<React.SetStateAction<string>>;
+  userCourse: string;
+  setUserCourse: React.Dispatch<React.SetStateAction<string>>;
+  languagesDict: { [key: string]: string };
 }
 
+// Cargar variables de entorno
+const ALL_COURSES_FULL = import.meta.env.VITE_ALL_COURSES_FULL.split(",");
+const ALL_COURSES = import.meta.env.VITE_ALL_COURSES.split(",");
+
+// Crear el contexto
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
-const URL = import.meta.env.VITE_DJANGO_API_URL;
-export const UserProvider = ({ children }: {children:React.ReactNode}) => {
-    const [userCourse,setUserCourse] = useState<string>('it')
-    
-    /*const getGeneralsUser = async () => {
-        try {
-          const token = localStorage.getItem('token');
+export const UserProvider = ({ children }: { children: ReactNode }) => {
+  const [userCourse, setUserCourse] = useState<string>("it");
 
-          if (!token) {
-            console.error('No token found in localStorage');
-            return;
-          }
-      
-          const response = await fetch(`${URL}generalUsers`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${token}`,
-            },
-          });
+  // Memoizar el diccionario para evitar recomputaciones innecesarias
+  const languagesDict = useMemo(() => {
+    let dict: { [key: string]: string } = {};
+    ALL_COURSES.forEach((item:string, index:number) => {
+      dict[item] = ALL_COURSES_FULL[index];
+    });
+    return dict;
+  }, []);
 
-          if (!response.ok) {
-            console.error(`Error: ${response.status} ${response.statusText}`);
-            return;
-          }
-          const data = await response.json();
-          return data.data;
-        } catch (error) {
-          console.error('An error occurred while fetching general users:', error);
-        }
-    };*/
-      
-    return (
-        <UserContext.Provider value={{userCourse,setUserCourse}}>
-            {children}
-        </UserContext.Provider>
-    );
+  return (
+    <UserContext.Provider value={{ userCourse, setUserCourse, languagesDict }}>
+      {children}
+    </UserContext.Provider>
+  );
 };
 
-// Hook para usar el contexto de autenticación
+// Hook para consumir el contexto
 export const useUserContext = () => {
-    const context = useContext(UserContext);
-    if(!context){
-        throw new Error("use general debe usarse dentro de un Userprovider");
-    }
-    return context;
-}
+  const context = useContext(UserContext);
+  if (!context) {
+    throw new Error("useUserContext debe usarse dentro de un UserProvider.");
+  }
+  return context;
+};
