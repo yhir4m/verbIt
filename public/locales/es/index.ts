@@ -1,8 +1,8 @@
 import traduction from "./es-traduction.json";
-import words from "./es-words.json";
+import wordsA1 from "./es-words-A1.json";
 
 
 export default {
     ...traduction,
-    ...words
+    ...wordsA1
 }

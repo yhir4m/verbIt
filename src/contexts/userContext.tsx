@@ -15,7 +15,7 @@ const ALL_COURSES = import.meta.env.VITE_ALL_COURSES.split(",");
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [userCourse, setUserCourse] = useState<string>("it");
+  const [userCourse, setUserCourse] = useState<string>("en");
 
   // Memoizar el diccionario para evitar recomputaciones innecesarias
   const languagesDict = useMemo(() => {

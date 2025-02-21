@@ -1,0 +1,35 @@
+
+.words-test--container{
+
+    padding: 5% 0;
+}
+
+.words-test--card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.words-test--card--image{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    img{
+        max-width: 60%;
+        border-radius: 2rem;
+    }
+    background: #afafaf;
+}
+.words-test--card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    input{
+        border: #000 2px solid;
+    }
+}
