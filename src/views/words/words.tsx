@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useUserContext } from '../../contexts/userContext';
+//import { useUserContext } from '../../contexts/userContext';
 import { useParams } from "react-router-dom";
 import ShinningButton from '../../components/Buttons/shinning-button/shinning-button';
 import "./words-a1.css";
@@ -9,7 +9,7 @@ function WordsA1() {
   type UrlParams = {
       level:string;
   };
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const {level} = useParams<UrlParams>();
 
 

@@ -1,4 +1,5 @@
 import Home from "../views/Home/Home";
+import AuthUser from "../views/authUser/authUser";
 import GeneralWords from "../views/GeneralWords/GeneralWords";
 import WordsA1 from "../views/words/words";
 import WordsTest from "../views/wordsTest/wordsTest";
@@ -13,7 +14,7 @@ const utilsRoutes = {
             element:GeneralWords
         },{
             path:"/login",
-            element:GeneralWords
+            element:AuthUser
         },{
             path:"/Words/:level",
             element:WordsA1

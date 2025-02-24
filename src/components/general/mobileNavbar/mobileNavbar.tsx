@@ -6,6 +6,7 @@ import "./mobileNavbar.css";
 import generalUtils from "../../../utils/generalUtils";
 
 import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom";
 
 function MobileNavbar() {
   const [userLanguage, setUserLanguage] = useState("zh");
@@ -24,7 +25,7 @@ function MobileNavbar() {
 
       <section className="mobile-navbar__rigth">
         <section className="mobile-navbar__logo">
-          <span>VerbIt</span>
+          <Link to="/" >VerbIt</Link>
         </section>
         <div className="mobile-navbar__user">
               <img
@@ -33,7 +34,7 @@ function MobileNavbar() {
               alt="Course flag"
               onClick={()=>generalUtils.launchModal("userCourseSelectModal","userCourseSelectModal-active")}
               />
-              <span>User</span>
+              <Link to="/login">Login</Link>
         </div>
       </section>
 

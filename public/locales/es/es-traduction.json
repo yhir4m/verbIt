@@ -4,5 +4,11 @@
     "traduction-general-words": "Vocabulario general",
     "traduction-words_A1": "Vocabulario A1",
     "traduction-words_A1-description": "100 pabras de vocabulario basico",
-    "traduction-words-button":"Tomar test"
+    "traduction-words-button":"Tomar test",
+    "traduction-login-register-text":"Crear una cuenta con tu email y contraseña",
+    "traduction-register":"Registrate",
+    "traduction-change-login-text":"¿Tienes una cuenta?",
+    "traduction-login-first_name":"Nombre",
+    "traduction-login-last_name":"Apellido",
+    "traduction-password":"Contraseña"
 }

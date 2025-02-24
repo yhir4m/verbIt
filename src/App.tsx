@@ -4,7 +4,7 @@ import RoutesList from './routes'
 import i18next from 'i18next'
 import { I18nextProvider } from 'react-i18next'
 import { UserProvider } from './contexts/userContext'
-import en from "../public/locales/en/index";
+import en from "../public/locales/en/index.ts";
 import es from "../public/locales/es/index";
 
 i18next.init({

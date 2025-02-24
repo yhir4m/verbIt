@@ -21,7 +21,7 @@ function WordsTest(){
             navigate('/');
         }else{
             setTestWords(testUtils.getTestWords(testUtils.createWordsUrl(level,userCourse)))
-            
+            console.log(testWords)
         }
     },[userCourse])
     
@@ -32,7 +32,7 @@ function WordsTest(){
                     <img src="/1.png" alt="" />
                 </div>
                 <div className="words-test--card-text">
-                    <span>pene pene</span>
+                    <span>ola</span>
                     <input type="text" />
                 </div>
             </section>

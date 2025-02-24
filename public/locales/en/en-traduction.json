@@ -4,5 +4,12 @@
     "traduction-general-words": "General Words",
     "traduction-words_A1": "Vocabulary A1",
     "traduction-words_A1-description": "100 words of basic vocabulary",
-    "traduction-words-button":"Take test"
+    "traduction-words-button":"Take test",
+    "traduction-register":"Register",
+    "traduction-login-register-text":"Create a free account with your email and password",
+    "traduction-change-login-text":"Have an account?",
+    "traduction-login-first_name":"First Name",
+    "traduction-login-last_name":"Last Name",
+    "traduction-password":"Password"
+    
 }
